@@ -1,0 +1,20 @@
+{
+  "name": "test-tg-bot",
+  "version": "1.0.0",
+  "main": "api/bot.ts",
+  "scripts": {
+    "start": "npx ts-node api/bot.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/node": "^22.9.0",
+    "@vercel/node": "^3.2.24",
+    "dotenv": "^16.4.5",
+    "telegraf": "^4.16.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
