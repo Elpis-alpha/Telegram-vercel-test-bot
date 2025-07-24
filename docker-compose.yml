@@ -1,0 +1,11 @@
+name: test-bot
+
+services:
+  test-bot:
+    build:
+      context: ./
+      target: production
+    restart: always
+    env_file: ./.env
+    ports:
+      - 5013:5000
