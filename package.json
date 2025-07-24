@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "api/bot.ts",
   "scripts": {
-    "start": "npx ts-node api/bot.ts"
+    "start": "npx ts-node api/bot.ts",
+    "deploy": "git add . && git commit -m",
+    "postdeploy": "git push"
   },
   "keywords": [],
   "author": "",

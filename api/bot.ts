@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import { Telegraf } from "telegraf";
-import { VercelRequest, VercelResponse } from "@vercel/node";
+// import { VercelRequest, VercelResponse } from "@vercel/node";
 
 dotenv.config();
 
@@ -12,12 +12,23 @@ bot.start((ctx) => {
   ctx.reply("Hello!");
 });
 
-// Webhook handler function for Vercel
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  try {
-    await bot.handleUpdate(req.body, res);
-  } catch (error) {
-    console.error("Error handling update:", error);
-    res.status(500).send("Internal Server Error");
+// // Webhook handler function for Vercel
+// export default async function handler(req: VercelRequest, res: VercelResponse) {
+//   try {
+//     await bot.handleUpdate(req.body, res);
+//   } catch (error) {
+//     console.error("Error handling update:", error);
+//     res.status(500).send("Internal Server Error");
+//   }
+// }
+
+bot.launch(
+  {
+    webhook: {
+      domain: "http://bot-de.duckdns.org", // Replace with your Vercel app URL
+    },
+  },
+  () => {
+    console.log("Bot is running and listening for updates...");
   }
-}
+);
