@@ -12,6 +12,15 @@ bot.start((ctx) => {
   ctx.reply("Hello!");
 });
 
+bot.command("process", async (ctx) => {
+  for (let i = 0; i < 10; i++) {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    ctx.reply(`Processing... ${i + 1}/10`);
+  }
+
+  await ctx.reply("Processing complete!");
+});
+
 // // Webhook handler function for Vercel
 // export default async function handler(req: VercelRequest, res: VercelResponse) {
 //   try {
@@ -25,7 +34,7 @@ bot.start((ctx) => {
 bot.launch(
   {
     webhook: {
-      domain: "http://bot-de.duckdns.org", // Replace with your Vercel app URL
+      domain: "https://bot.dedash.fun", // Replace with your Vercel app URL
       ipAddress: "http://217.196.51.52:5013/",
       port: 5000,
     },
