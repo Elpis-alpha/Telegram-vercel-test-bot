@@ -35,7 +35,6 @@ bot.launch(
   {
     webhook: {
       domain: "https://bot.dedash.fun", // Replace with your Vercel app URL
-      ipAddress: "http://217.196.51.52:5013/",
       port: 5000,
     },
   },
